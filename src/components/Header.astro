@@ -5,8 +5,8 @@ const menu = 'Hola como estas'
 import heroImage from '../assets/robot .png'
 ---
 
-<header class='fixed top-0 left-0 w-full z-50'>
-  <nav class='bg-white dark:bg-gray-800 shadow-md'>
+<header class="fixed top-0 left-0 w-full z-50">
+  <nav class='bg-white dark:bg-gray-800 shadow-md py-4'>
     <div class='mx-auto max-w-7xl px-2 sm:px-6 lg:px-8'>
       <div class='relative flex h-16 items-center justify-between'>
         <div class='absolute inset-y-0 left-0 flex items-center sm:hidden'>
@@ -74,22 +74,22 @@ import heroImage from '../assets/robot .png'
               <!-- Current: "bg-gray-900 text-white", Default: "text-gray-300 hover:bg-gray-700 hover:text-white" -->
               <a
                 href='/'
-                class='rounded-md bg-gray-600 px-3 py-2 text-sm font-medium text-white'
+                class='rounded-md bg-gray-600 px-3 py-2 text-sm font-medium text-white hidden sm:block'
                 aria-current='page'>Productos</a
               >
               <a
                 href='#'
-                class='rounded-md px-3 py-2 text-sm font-medium text-gray-300 hover:bg-gray-700 hover:text-white'
+                class='rounded-md px-3 py-2 text-sm font-medium text-gray-300 hover:bg-gray-700 hover:text-white hidden sm:block'
                 >¿Quienes somos?</a
               >
               <a
                 href='#'
-                class='rounded-md px-3 py-2 text-sm font-medium text-gray-300 hover:bg-gray-700 hover:text-white'
+                class='rounded-md px-3 py-2 text-sm font-medium text-gray-300 hover:bg-gray-700 hover:text-white hidden sm:block'
                 >Contacto</a
               >
               <a
                 href='#'
-                class='rounded-md px-3 py-2 text-sm font-medium text-gray-300 hover:bg-gray-700 hover:text-white'
+                class='rounded-md px-3 py-2 text-sm font-medium text-gray-300 hover:bg-gray-700 hover:text-white hidden sm:block'
                 >Cotiza con nosotros</a
               >
             </div>
@@ -126,3 +126,16 @@ import heroImage from '../assets/robot .png'
     </div>
   </nav>
 </header>
+
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    const mobileMenuButton = document.querySelector('[aria-controls="mobile-menu"]');
+    const mobileMenu = document.getElementById('mobile-menu');
+
+    mobileMenuButton.addEventListener('click', () => {
+      const expanded = mobileMenuButton.getAttribute('aria-expanded') === 'true' || false;
+      mobileMenuButton.setAttribute('aria-expanded', !expanded);
+      mobileMenu.classList.toggle('hidden');
+    });
+  });
+</script>
