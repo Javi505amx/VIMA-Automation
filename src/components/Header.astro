@@ -5,11 +5,11 @@ const menu = 'Hola como estas'
 import heroImage from '../assets/robot .png'
 ---
 
-<header class="fixed top-0 left-0 w-full z-50">
+<header class='fixed top-0 left-0 w-full z-50'>
   <nav class='bg-white dark:bg-gray-800 shadow-md py-4'>
     <div class='mx-auto max-w-7xl px-2 sm:px-6 lg:px-8'>
       <div class='relative flex h-16 items-center justify-between'>
-        <div class='absolute inset-y-0 left-0 flex items-center sm:hidden'>
+        <div class='absolute inset-y-0 right-0 flex items-center sm:hidden'>
           <!-- Mobile menu button-->
           <button
             type='button'
@@ -58,7 +58,7 @@ import heroImage from '../assets/robot .png'
           </button>
         </div>
         <div
-          class='flex flex-1 items-center justify-center sm:items-stretch sm:justify-start'
+          class='flex flex-1 items-center justify-between sm:items-stretch sm:justify-start'
         >
           <div class='flex flex-shrink-0 items-center'>
             <a href='#'
@@ -99,8 +99,8 @@ import heroImage from '../assets/robot .png'
     </div>
 
     <!-- Mobile menu, show/hide based on menu state. -->
-    <div class='sm:hidden' id='mobile-menu'>
-      <div class='space-y-1 px-2 pb-3 pt-2'>
+    <div class="sm:hidden transition-all duration-500 ease-in-out max-h-0 overflow-hidden opacity-0 bg-white dark:bg-gray-800 shadow-md" id="mobile-menu">
+      <div class="space-y-1 px-2 pb-3 pt-2">
         <!-- Current: "bg-gray-900 text-white", Default: "text-gray-300 hover:bg-gray-700 hover:text-white" -->
         <a
           href='#'
@@ -134,9 +134,28 @@ import heroImage from '../assets/robot .png'
 
     if (mobileMenuButton && mobileMenu) {
       mobileMenuButton.addEventListener('click', () => {
-        const expanded = mobileMenuButton.getAttribute('aria-expanded') === 'true' || false;
+        const expanded = mobileMenuButton.getAttribute('aria-expanded') === 'true';
         mobileMenuButton.setAttribute('aria-expanded', (!expanded).toString());
-        mobileMenu.classList.toggle('hidden');
+        
+        if (expanded) {
+          mobileMenu.style.maxHeight = '0px';
+          mobileMenu.style.opacity = '0';
+          mobileMenu.style.paddingTop = '0px';
+          mobileMenu.style.paddingBottom = '0px';
+        } else {
+          mobileMenu.style.maxHeight = mobileMenu.scrollHeight + 'px';
+          mobileMenu.style.opacity = '1';
+          mobileMenu.style.paddingTop = '0.5rem';
+          mobileMenu.style.paddingBottom = '0.75rem';
+        }
+        
+        // Toggle the icon
+        const openIcon = mobileMenuButton.querySelector('.block');
+        const closeIcon = mobileMenuButton.querySelector('.hidden');
+        if (openIcon instanceof HTMLElement && closeIcon instanceof HTMLElement) {
+          openIcon.classList.toggle('hidden');
+          closeIcon.classList.toggle('hidden');
+        }
       });
     }
   });
