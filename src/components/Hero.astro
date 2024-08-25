@@ -1,58 +1,46 @@
 ---
-import { Image } from 'astro:assets'
-import Link from '../components/ui/link.astro'
-import heroBackground from '../assets/hero-background.jpg'
-import MercadoLibre from '../components/ui/icons/MercadoLibre.astro'
+import { Image } from 'astro:assets';
+import Link from '../components/ui/link.astro';
+import heroBackground from '../assets/hero-background.jpg';
+import MercadoLibre from '../components/ui/icons/MercadoLibre.astro';
 ---
 
-<section class='relative w-full h-screen flex items-center justify-center'>
-  <div class='absolute inset-0 z-0'>
+<section class="relative w-full h-screen flex items-center justify-center">
+  <div class="absolute inset-0 z-0">
     <Image
       src={heroBackground}
-      alt='Industrial automation background'
-      class='w-full h-full object-cover'
+      alt="Industrial automation background"
+      class="w-full h-full object-cover"
     />
-    <div class='absolute inset-0 bg-black opacity-80'></div>
+    <div class="absolute inset-0 bg-black opacity-80"></div>
   </div>
-
-  <div class='relative z-10 text-center text-zinc-100 max-w-4xl mx-auto px-4'>
-    <h1
-      class='text-5xl md:text-6xl lg:text-7xl font-extrabold mb-6 text-white drop-shadow-[0_2px_2px_rgba(64,64,64,1)] animate-title'
-      aria-label='Equipo de control y automatización para la industria - Vima Automation'
-    >
-      Equipo de control y <span class='text-sky-400'>automatización</span> para la
-      industria
+  
+  <div class="relative z-10 text-center text-zinc-100 max-w-4xl mx-auto px-4">
+    <h1 class="text-5xl md:text-6xl lg:text-7xl font-extrabold mb-6 text-white drop-shadow-[0_2px_2px_rgba(64,64,64,1)] animate-title" aria-label="Equipo de control y automatización para la industria - Vima Automation">
+      Equipo de control y <span class="text-sky-400">automatización</span> para la industria
     </h1>
-    <p class='text-xl md:text-2xl text-zinc-300 mb-8 text-shadow'>
+    <p class="text-xl md:text-2xl text-zinc-300  mb-8 text-shadow">
       Somos líderes en ventas de equipo de control y automatización
     </p>
-    <div class='flex flex-col sm:flex-row gap-4 justify-center'>
+    <div class="flex flex-col sm:flex-row gap-4 justify-center">
       <Link
-        href='#'
-        target='_blank'
-        class='text-lg rounded-lg bg-yellow-400/95 hover:bg-amber-400/95 text-slate-950 hover:text-slate-800 hover:translate-y-[-2px] transition-all duration-300 ease-out flex items-center justify-center shadow-md hover:shadow-lg font-bold px-6 py-3'
-        rel='noopener noreferrer'
+        href="#"
+        target="_blank"
+        class="text-lg rounded-lg bg-yellow-400 text-slate-900 hover:bg-amber-400  hover:text-slate-950 hover:translate-y-[-2px] transition-all duration-300 ease-out flex items-center justify-center shadow-md hover:shadow-lg font-bold px-6 py-3"
+        rel="noopener noreferrer"
       >
-        <MercadoLibre class='w-8 h-8 mr-2' />
+        <MercadoLibre class="w-8 h-8 mr-2" />
         <span>Comprar en Mercado Libre</span>
       </Link>
       <Link
-        href='#'
-        size='lg'
-        class='text-lg rounded-lg hover:bg-sky-500 text-zinc-200 bg-sky-600 hover:text-white hover:translate-y-[-2px] transition-all duration-300 ease-out flex items-center justify-center shadow-md hover:shadow-lg font-semibold px-6 py-3'
-        target='_blank'
-        rel='noopener noreferrer'
+        href="#"
+        size="lg"
+        class="text-lg rounded-lg bg-sky-700 text-slate-700 hover:bg-sky-500 hover:text-white    hover:translate-y-[-2px] transition-all duration-300 ease-out flex items-center justify-center shadow-md hover:shadow-lg font-semibold px-6 py-3"
+        target="_blank"
+        rel="noopener noreferrer"
       >
-        <svg
-          xmlns='http://www.w3.org/2000/svg'
-          class='w-5 h-5 mr-2'
-          viewBox='0 0 20 20'
-          fill='currentColor'
-        >
-          <path
-            fill-rule='evenodd'
-            d='M10 2a4 4 0 00-4 4v1H5a1 1 0 00-.994.89l-1 9A1 1 0 004 18h12a1 1 0 00.994-1.11l-1-9A1 1 0 0015 7h-1V6a4 4 0 00-4-4zm2 5V6a2 2 0 10-4 0v1h4zm-6 3a1 1 0 112 0 1 1 0 01-2 0zm7-1a1 1 0 100 2 1 1 0 000-2z'
-            clip-rule='evenodd'></path>
+        <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 mr-2" viewBox="0 0 20 20" fill="currentColor">
+          <path fill-rule="evenodd" d="M10 2a4 4 0 00-4 4v1H5a1 1 0 00-.994.89l-1 9A1 1 0 004 18h12a1 1 0 00.994-1.11l-1-9A1 1 0 0015 7h-1V6a4 4 0 00-4-4zm2 5V6a2 2 0 10-4 0v1h4zm-6 3a1 1 0 112 0 1 1 0 01-2 0zm7-1a1 1 0 100 2 1 1 0 000-2z" clip-rule="evenodd" />
         </svg>
         <span>Explorar Productos</span>
       </Link>
@@ -61,10 +49,10 @@ import MercadoLibre from '../components/ui/icons/MercadoLibre.astro'
 </section>
 
 <style>
-  @keyframes smoothFadeInUp {
+  @keyframes fadeInUp {
     from {
       opacity: 0;
-      transform: translateY(30px);
+      transform: translateY(20px);
     }
     to {
       opacity: 1;
@@ -73,18 +61,18 @@ import MercadoLibre from '../components/ui/icons/MercadoLibre.astro'
   }
 
   .animate-title {
-    animation: smoothFadeInUp 1.5s cubic-bezier(0.165, 0.84, 0.44, 1) forwards;
+    animation: fadeInUp 1s ease-out forwards;
     opacity: 0;
   }
 </style>
 
 <script>
   document.addEventListener('astro:page-load', () => {
-    const title = document.querySelector('.animate-title')
+    const title = document.querySelector('.animate-title');
     if (title) {
       title.addEventListener('animationend', () => {
-        title.classList.remove('animate-title')
-      })
+        title.classList.remove('animate-title');
+      });
     }
-  })
+  });
 </script>
