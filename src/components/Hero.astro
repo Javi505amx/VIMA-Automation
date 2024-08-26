@@ -40,7 +40,9 @@ import MercadoLibre from '../components/ui/icons/MercadoLibre.astro';
       <Link
         href="#"
         target="_blank"
-        class="text-lg rounded-lg bg-yellow-400 text-slate-900 hover:bg-amber-400  hover:text-slate-950 hover:translate-y-[-2px] transition-all duration-300 ease-out flex items-center justify-center shadow-md hover:shadow-lg font-bold px-6 py-3"
+        size="lg"
+        style="primary"
+        class="flex items-center justify-center shadow-md hover:shadow-lg font-bold px-6 py-3 "
         rel="noopener noreferrer"
       >
         <MercadoLibre class="w-8 h-8 mr-2" />
@@ -49,7 +51,8 @@ import MercadoLibre from '../components/ui/icons/MercadoLibre.astro';
       <Link
         href="#"
         size="lg"
-        class="text-lg rounded-lg bg-sky-700 text-slate-700 hover:bg-sky-500 hover:text-white    hover:translate-y-[-2px] transition-all duration-300 ease-out flex items-center justify-center shadow-md hover:shadow-lg font-semibold px-6 py-3"
+        style="secondary"
+        class="flex items-center justify-center shadow-md hover:shadow-lg font-semibold px-6 py-3 "
         target="_blank"
         rel="noopener noreferrer"
       >
@@ -75,7 +78,7 @@ import MercadoLibre from '../components/ui/icons/MercadoLibre.astro';
   }
 
   .animate-title {
-    animation: fadeInUp 1s ease-out forwards;
+    animation: fadeInUp 5s ease-out forwards;
     opacity: 0;
   }
 
@@ -128,6 +131,7 @@ import MercadoLibre from '../components/ui/icons/MercadoLibre.astro';
       if (slider instanceof HTMLElement) {
         slider.style.transition = 'transform 0.3s ease-out';
         slider.style.transform = `translateX(-${currentSlide * 33.33}%)`;
+       
       }
     }
 
