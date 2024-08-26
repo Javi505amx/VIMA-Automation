@@ -1,20 +1,34 @@
 ---
 import { Image } from 'astro:assets';
 import Link from '../components/ui/link.astro';
-import heroBackground from '../assets/hero-background.jpg';
+import heroBackground1 from '../assets/hero-background.jpg';
+import heroBackground2 from '../assets/hero-background2.png';
+import heroBackground3 from '../assets/hero-background3.png';
 import MercadoLibre from '../components/ui/icons/MercadoLibre.astro';
 ---
 
-<section class="relative w-full h-screen flex items-center justify-center">
+<section class="relative w-full h-screen flex items-center justify-center overflow-hidden">
   <div class="absolute inset-0 z-0">
-    <Image
-      src={heroBackground}
-      alt="Industrial automation background"
-      class="w-full h-full object-cover"
-    />
+    <div class="slider" id="slider">
+      <Image src={heroBackground1} alt="Industrial automation background 1" class="slide" />
+      <Image src={heroBackground2} alt="Industrial automation background 2" class="slide" />
+      <Image src={heroBackground3} alt="Industrial automation background 3" class="slide" />
+    </div>
     <div class="absolute inset-0 bg-black opacity-80"></div>
   </div>
-  
+
+  <!-- Add navigation buttons -->
+  <button id="prevBtn" class="absolute left-4 top-1/2 transform -translate-y-1/2 z-20 bg-white/20 hover:bg-white/40 text-white p-2 rounded-full">
+    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+      <path stroke-linecap="round" stroke-linejoin="round" d="M15.75 19.5L8.25 12l7.5-7.5" />
+    </svg>
+  </button>
+  <button id="nextBtn" class="absolute right-4 top-1/2 transform -translate-y-1/2 z-20 bg-white/20 hover:bg-white/40 text-white p-2 rounded-full">
+    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+      <path stroke-linecap="round" stroke-linejoin="round" d="M8.25 4.5l7.5 7.5-7.5 7.5" />
+    </svg>
+  </button>
+
   <div class="relative z-10 text-center text-zinc-100 max-w-4xl mx-auto px-4">
     <h1 class="text-5xl md:text-6xl lg:text-7xl font-extrabold mb-6 text-white drop-shadow-[0_2px_2px_rgba(64,64,64,1)] animate-title" aria-label="Equipo de control y automatización para la industria - Vima Automation">
       Equipo de control y <span class="text-sky-400">automatización</span> para la industria
@@ -64,15 +78,96 @@ import MercadoLibre from '../components/ui/icons/MercadoLibre.astro';
     animation: fadeInUp 1s ease-out forwards;
     opacity: 0;
   }
+
+  .slider {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 300%;
+    height: 100%;
+    display: flex;
+    animation: slide 20s infinite;
+  }
+
+  .slider:hover {
+    animation-play-state: paused;
+  }
+
+  .slide {
+    width: 33.33%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  @keyframes slide {
+    0% {
+      transform: translateX(0);
+    }
+    33% {
+      transform: translateX(-33.33%);
+    }
+    66% {
+      transform: translateX(-66.66%);
+    }
+    100% {
+      transform: translateX(0);
+    }
+  }
 </style>
 
 <script>
   document.addEventListener('astro:page-load', () => {
-    const title = document.querySelector('.animate-title');
-    if (title) {
-      title.addEventListener('animationend', () => {
-        title.classList.remove('animate-title');
+    const slider = document.getElementById('slider');
+    const prevBtn = document.getElementById('prevBtn');
+    const nextBtn = document.getElementById('nextBtn');
+    let currentSlide = 0;
+    const totalSlides = 3;
+    let autoSlideInterval: NodeJS.Timeout | null = null;
+
+    function updateSlider() {
+      if (slider instanceof HTMLElement) {
+        slider.style.transition = 'transform 0.3s ease-out';
+        slider.style.transform = `translateX(-${currentSlide * 33.33}%)`;
+        if (manual) {
+          resetAutoSlide();
+        }
+      }
+    }
+
+    function loopSlider() {
+      if (slider instanceof HTMLElement) {
+        currentSlide = 0;
+        slider.style.transition = 'none';
+        slider.style.transform = 'translateX(0)';
+        setTimeout(() => {
+          slider.style.transition = 'transform 0.3s ease-out';
+          nextSlide();
+        }, 30);
+      }
+    }
+
+    function nextSlide() {
+      currentSlide = (currentSlide + 1) % totalSlides;
+      updateSlider();
+    }
+
+    function startAutoSlide() {
+      autoSlideInterval = setInterval(nextSlide, 5000);
+    }
+
+    // Add a delay before starting the slider
+    setTimeout(() => {
+      startAutoSlide();
+    }, 3000); // 3 seconds delay
+
+    if (slider instanceof HTMLElement) {
+      slider.addEventListener('mouseenter', () => {
+        if (autoSlideInterval) {
+          clearInterval(autoSlideInterval);
+        }
       });
+
+      slider.addEventListener('mouseleave', startAutoSlide);
     }
   });
 </script>
