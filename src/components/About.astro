@@ -1,25 +1,27 @@
 ---
 import Link from './ui/link.astro';
----
+import Container from "../components/Container.astro";
+import Sectionhead from "../components/sectionhead.astro";
+import Layout from "../layouts/Layout.astro";
 
-<section class="py-16 bg-gray-100 dark:bg-gray-800">
-  <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-    <h2 class="text-4xl font-bold text-center mb-8 text-gray-900 dark:text-white">Sobre Nosotros</h2>
+---
+<Layout title="About">
+    <Container>
+      <Sectionhead>
+        <Fragment slot="title">Sobre Nosotros</Fragment>
+        <Fragment slot="desc">Quienes somos?</Fragment>
+      </Sectionhead>
+<section class="py-16 ">
+  <div class="mx-auto max-w-4xl mt-2">
+    <h2 class="font-medium text-2xl text-gray-800">Sobre Nosotros</h2>
     <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
       <div>
-        <p class="text-lg text-gray-700 dark:text-gray-300 mb-4">
+        <p class="text-lg leading-relaxed text-slate-500 mt-3">
           VIMA Automation es líder en la venta de equipos de control y automatización para la industria. Con años de experiencia, ofrecemos soluciones innovadoras y de alta calidad para optimizar procesos industriales.
         </p>
-        <p class="text-lg text-gray-700 dark:text-gray-300 mb-4">
+        <p class="text-lg leading-relaxed text-slate-500 mt-3">
           Nuestro compromiso es proporcionar tecnología de vanguardia y un servicio excepcional a nuestros clientes, ayudándoles a mejorar su eficiencia y productividad.
         </p>
-        <Link
-          href="#contact"
-          style="primary"
-          class="inline-block mt-4"
-        >
-          Contáctanos
-        </Link>
       </div>
       <div>
         <iframe
@@ -34,3 +36,4 @@ import Link from './ui/link.astro';
     </div>
   </div>
 </section>
+<Container />
