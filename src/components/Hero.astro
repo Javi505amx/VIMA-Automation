@@ -17,18 +17,6 @@ import MercadoLibre from '../components/ui/icons/MercadoLibre.astro';
     <div class="absolute inset-0 bg-black opacity-80"></div>
   </div>
 
-  <!-- Add navigation buttons -->
-  <button id="prevBtn" class="absolute left-4 top-1/2 transform -translate-y-1/2 z-20 bg-white/20 hover:bg-white/40 text-white p-2 rounded-full">
-    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
-      <path stroke-linecap="round" stroke-linejoin="round" d="M15.75 19.5L8.25 12l7.5-7.5" />
-    </svg>
-  </button>
-  <button id="nextBtn" class="absolute right-4 top-1/2 transform -translate-y-1/2 z-20 bg-white/20 hover:bg-white/40 text-white p-2 rounded-full">
-    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
-      <path stroke-linecap="round" stroke-linejoin="round" d="M8.25 4.5l7.5 7.5-7.5 7.5" />
-    </svg>
-  </button>
-
   <div class="relative z-10 text-center text-zinc-100 max-w-4xl mx-auto px-4">
     <h1 class="text-5xl md:text-6xl lg:text-7xl font-extrabold mb-6 text-white drop-shadow-[0_2px_2px_rgba(64,64,64,1)] animate-title" aria-label="Equipo de control y automatización para la industria - Vima Automation">
       Equipo de control y <span class="text-sky-400">automatización</span> para la industria
@@ -121,35 +109,16 @@ import MercadoLibre from '../components/ui/icons/MercadoLibre.astro';
 <script>
   document.addEventListener('astro:page-load', () => {
     const slider = document.getElementById('slider');
-    const prevBtn = document.getElementById('prevBtn');
-    const nextBtn = document.getElementById('nextBtn');
     let currentSlide = 0;
     const totalSlides = 3;
     let autoSlideInterval: NodeJS.Timeout | null = null;
 
-    function updateSlider() {
+    function nextSlide() {
+      currentSlide = (currentSlide + 1) % totalSlides;
       if (slider instanceof HTMLElement) {
         slider.style.transition = 'transform 0.3s ease-out';
         slider.style.transform = `translateX(-${currentSlide * 33.33}%)`;
-       
       }
-    }
-
-    function loopSlider() {
-      if (slider instanceof HTMLElement) {
-        currentSlide = 0;
-        slider.style.transition = 'none';
-        slider.style.transform = 'translateX(0)';
-        setTimeout(() => {
-          slider.style.transition = 'transform 0.3s ease-out';
-          nextSlide();
-        }, 30);
-      }
-    }
-
-    function nextSlide() {
-      currentSlide = (currentSlide + 1) % totalSlides;
-      updateSlider();
     }
 
     function startAutoSlide() {
