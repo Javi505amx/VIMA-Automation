@@ -1,54 +1,64 @@
-# Astro Starter Kit: Basics
+# VIMA Automation
 
-```sh
-npm create astro@latest -- --template basics
-```
+## Descripción del Proyecto
 
-[![Open in StackBlitz](https://developer.stackblitz.com/img/open_in_stackblitz.svg)](https://stackblitz.com/github/withastro/astro/tree/latest/examples/basics)
-[![Open with CodeSandbox](https://assets.codesandbox.io/github/button-edit-lime.svg)](https://codesandbox.io/p/sandbox/github/withastro/astro/tree/latest/examples/basics)
-[![Open in GitHub Codespaces](https://github.com/codespaces/badge.svg)](https://codespaces.new/withastro/astro?devcontainer_path=.devcontainer/basics/devcontainer.json)
+VIMA Automation es una aplicación web diseñada para proporcionar información sobre soluciones de control y automatización industrial. Este proyecto incluye un menú colapsable, un slider de imágenes y secciones informativas sobre la empresa y sus servicios.
 
-> 🧑‍🚀 **Seasoned astronaut?** Delete this file. Have fun!
+## Características
 
-![just-the-basics](https://github.com/withastro/astro/assets/2244813/a0a5533c-a856-4198-8470-2d67b1d7c554)
+- **Menú Colapsable**: Un menú que se adapta a dispositivos móviles, permitiendo una navegación fácil y accesible.
+- **Slider de Imágenes**: Un slider que muestra imágenes relevantes sobre la automatización industrial.
+- **Secciones Informativas**: Información sobre la empresa, sus productos y cómo contactar.
 
-## 🚀 Project Structure
+## Tecnologías Utilizadas
 
-Inside of your Astro project, you'll see the following folders and files:
+- ![HTML5](https://img.shields.io/badge/HTML5-E34F26?style=flat-square&logo=html5&logoColor=white) HTML
+- ![CSS3](https://img.shields.io/badge/CSS3-1572B6?style=flat-square&logo=css3&logoColor=white) CSS
+- ![Tailwind CSS](https://img.shields.io/badge/Tailwind%20CSS-06B6D4?style=flat-square&logo=tailwindcss&logoColor=white) Tailwind CSS
+- ![JavaScript](https://img.shields.io/badge/JavaScript-F7DF1E?style=flat-square&logo=javascript&logoColor=black) JavaScript
+- ![Astro](https://img.shields.io/badge/Astro-FF5C5C?style=flat-square&logo=astro&logoColor=white) Astro
 
-```text
-/
-├── public/
-│   └── favicon.svg
-├── src/
-│   ├── components/
-│   │   └── Card.astro
-│   ├── layouts/
-│   │   └── Layout.astro
-│   └── pages/
-│       └── index.astro
-└── package.json
-```
+## Instalación
 
-Astro looks for `.astro` or `.md` files in the `src/pages/` directory. Each page is exposed as a route based on its file name.
+Para ejecutar este proyecto localmente, sigue estos pasos:
 
-There's nothing special about `src/components/`, but that's where we like to put any Astro/React/Vue/Svelte/Preact components.
+1. Clona el repositorio:
 
-Any static assets, like images, can be placed in the `public/` directory.
+   ```bash
+   git clone https://github.com/tu_usuario/vima-automation.git
+   ```
 
-## 🧞 Commands
+2. Navega al directorio del proyecto:
 
-All commands are run from the root of the project, from a terminal:
+   ```bash
+   cd vima-automation
+   ```
 
-| Command                   | Action                                           |
-| :------------------------ | :----------------------------------------------- |
-| `npm install`             | Installs dependencies                            |
-| `npm run dev`             | Starts local dev server at `localhost:4321`      |
-| `npm run build`           | Build your production site to `./dist/`          |
-| `npm run preview`         | Preview your build locally, before deploying     |
-| `npm run astro ...`       | Run CLI commands like `astro add`, `astro check` |
-| `npm run astro -- --help` | Get help using the Astro CLI                     |
+3. Abre el archivo `index.html` en tu navegador.
 
-## 👀 Want to learn more?
+## Uso
 
-Feel free to check [our documentation](https://docs.astro.build) or jump into our [Discord server](https://astro.build/chat).
+- Haz clic en el botón del menú en la parte superior derecha para abrir y cerrar el menú colapsable.
+- Navega a través de las secciones para obtener más información sobre VIMA Automation y sus servicios.
+
+## Contribuciones
+
+Las contribuciones son bienvenidas. Si deseas contribuir a este proyecto, por favor sigue estos pasos:
+
+1. Haz un fork del repositorio.
+2. Crea una nueva rama (`git checkout -b feature/nueva-caracteristica`).
+3. Realiza tus cambios y haz un commit (`git commit -m 'Añadir nueva característica'`).
+4. Envía tus cambios (`git push origin feature/nueva-caracteristica`).
+5. Abre un Pull Request.
+
+## Licencia
+
+Este proyecto está bajo la Licencia MIT. Consulta el archivo [LICENSE](LICENSE) para más detalles.
+
+## Contacto
+
+Para más información, puedes contactar a:
+
+- **Nombre**: Tu Nombre
+- **Email**: tu_email@example.com
+- **GitHub**: [tu_usuario](https://github.com/tu_usuario)
