@@ -59,6 +59,7 @@ Este proyecto está bajo la Licencia MIT. Consulta el archivo [LICENSE](LICENSE)
 
 Para más información, puedes contactar a:
 
-- **Nombre**: Tu Nombre
-- **Email**: tu_email@example.com
-- **GitHub**: [tu_usuario](https://github.com/tu_usuario)
+- **Nombre**: Javier Villalvazo
+- **Email**: javiervp41@gmail.com
+- **GitHub**: [Javi505amx](https://github.com/Javi505amx)
+- **LinkedIn**: [Javier Villalvazo](https://www.linkedin.com/in/javier-villalvazo/)
