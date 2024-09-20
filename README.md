@@ -1,6 +1,6 @@
 # VIMA Automation
 
-![Screenshot](./src/assets/index.png)
+![Screenshot](./src/assets/index.jpg)
 
 ## Descripción del Proyecto
 
