@@ -1,7 +1,6 @@
 # VIMA Automation
 
-![Vima Automation](./public/vima-automation.png)
-![Screenshot](./public/index.png)
+![Screenshot](./src/assets/index.png)
 
 ## Descripción del Proyecto
 
