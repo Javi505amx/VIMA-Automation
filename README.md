@@ -1,5 +1,8 @@
 # VIMA Automation
 
+![Vima Automation](./public/vima-automation.png)
+![Screenshot](./public/index.png)
+
 ## Descripción del Proyecto
 
 VIMA Automation es una aplicación web diseñada para proporcionar información sobre soluciones de control y automatización industrial. Este proyecto incluye un menú colapsable, un slider de imágenes y secciones informativas sobre la empresa y sus servicios.
@@ -12,11 +15,9 @@ VIMA Automation es una aplicación web diseñada para proporcionar información 
 
 ## Tecnologías Utilizadas
 
-- ![HTML5](https://img.shields.io/badge/HTML5-E34F26?style=flat-square&logo=html5&logoColor=white) HTML
-- ![CSS3](https://img.shields.io/badge/CSS3-1572B6?style=flat-square&logo=css3&logoColor=white) CSS
+- ![Astro](https://img.shields.io/badge/Astro-FF5C5C?style=flat-square&logo=astro&logoColor=white) Astro
 - ![Tailwind CSS](https://img.shields.io/badge/Tailwind%20CSS-06B6D4?style=flat-square&logo=tailwindcss&logoColor=white) Tailwind CSS
 - ![JavaScript](https://img.shields.io/badge/JavaScript-F7DF1E?style=flat-square&logo=javascript&logoColor=black) JavaScript
-- ![Astro](https://img.shields.io/badge/Astro-FF5C5C?style=flat-square&logo=astro&logoColor=white) Astro
 
 ## Instalación
 
