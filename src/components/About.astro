@@ -1,16 +1,15 @@
 ---
 import Link from './ui/link.astro';
-import Container from "../components/Container.astro";
+import Container from "./Container.astro";
 import Sectionhead from "../components/sectionhead.astro";
 import Layout from "../layouts/Layout.astro";
 
 ---
-<Layout title="About">
-    <Container>
-      <Sectionhead>
-        <Fragment slot="title">Sobre Nosotros</Fragment>
-        <Fragment slot="desc">Quienes somos?</Fragment>
-      </Sectionhead>
+  <Container>
+  <Sectionhead>
+    <Fragment slot="title">Sobre Nosotros</Fragment>
+    <Fragment slot="desc">Quienes somos?</Fragment>
+  </Sectionhead>
 <section class="py-16 ">
   <div class="mx-auto max-w-4xl mt-2">
     <h2 class="font-medium text-2xl text-gray-800">Sobre Nosotros</h2>
@@ -36,4 +35,4 @@ import Layout from "../layouts/Layout.astro";
     </div>
   </div>
 </section>
-<Container />
+</Container>
