@@ -1,12 +1,11 @@
 ---
 import Contactform from "../components/contactform.astro";
-import Container from "../components/Container.astro";
+import Container from "./Container.astro";
 import Sectionhead from "../components/sectionhead.astro";
 import Layout from "../layouts/Layout.astro";
 
 ---
 
-<Layout title="Contact">
   <Container>
     <Sectionhead>
       <Fragment slot="title">Contáctanos</Fragment>
@@ -43,6 +42,8 @@ import Layout from "../layouts/Layout.astro";
             </svg>
             <a href="tel:+52 (33) 1011 8084">+52 (33) 1011 8084</a>
           </div>
+
+          
         </div>
       </div>
       <div>
@@ -50,4 +51,3 @@ import Layout from "../layouts/Layout.astro";
       </div>
     </div>
   </Container>
-</Layout>

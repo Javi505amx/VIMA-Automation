@@ -1,0 +1,148 @@
+---
+import Container from "../Container.astro";
+import Link from "../ui/link.astro";
+import { Astronav, MenuItems, MenuIcon } from "astro-navbar";
+import Whatsapp from "../ui/icons/Whatsapp.astro";
+const menuitems = [
+  {
+    title: "Features",
+    path: "#",
+    children: [
+      { title: "Action", path: "/" },
+      { title: "Another action", path: "#" },
+      { title: "Dropdown Submenu", path: "#" },
+      { title: "404 Page", path: "/404" },
+    ],
+  },
+  // {
+  //   title: "Pricing",
+  //   path: "/pricing",
+  // },
+  {
+    title: "¿Quienes somos?",
+    badge: false,
+    path: "/#about",
+  },
+  // {
+  //   title: "Blog",
+  //   path: "/blog",
+  // },
+  {
+    title: "Cotiza con nosotros",
+    path: "/#contact",
+  },
+  {
+    title: "Productos",
+    badge: true,
+    path: "/products",
+  },
+];
+---
+<Container class="bg-gray-800 p-5 fixed top-0 left-0 w-full z-50 h-auto "  >
+
+  <header class=" flex flex-col  lg:flex-row justify-between items-center">
+    <Astronav >
+      <div class="flex w-full  lg:w-auto items-center justify-between ">
+        <a href="/" class="text-lg"
+          ><span class='text-sky-600 text-2xl font-bold uppercase'
+          >Vima
+        </span><span class='text-slate-200 text-2xl dark:text-slate-200'
+          >Automation</span
+        >
+        </a>
+        <div class="block lg:hidden">
+          <MenuIcon class="w-10 h-10 text-slate-200" />
+        </div>
+      </div>
+      <MenuItems class="hidden w-full lg:w-auto mt-2 lg:flex lg:mt-0 ">
+        <ul class="flex flex-col lg:flex-row lg:gap-3 mx-5">
+          {
+            menuitems.map((item, index) => (
+              <>
+                {/* {item.children && (
+                  <Dropdown
+                    title={item.title}
+                    children={item.children}
+                    lastItem={index === menuitems.length - 1}
+                  />
+                )} */}
+
+                {!item.children && (
+                  <li>
+                    <a
+                      href={item.path}
+                      class="flex lg:px-3  py-2 items-center text-slate-200 hover:text-sky-600">
+                      <span> {item.title}</span>
+                      {item.badge && (
+                        <span class="ml-1 px-2 py-0.5 text-[10px] animate-pulse font-semibold uppercase text-white bg-sky-600 rounded-full">
+                          Descubrelos!
+                        </span>
+                      )}
+                    </a>
+                  </li>
+                )}
+              </>
+            ))
+          }
+        </ul>
+        <!-- <div class="lg:hidden flex items-center mt-3 gap-4">
+          <Link href="#" style="muted" block size="md">Log in</Link>
+          <Link href="#" block size="md">
+            <Whatsapp class="w-8 h-8 mr-2" />
+            <span>Whatsapp</span></Link>
+        </div> -->
+      </MenuItems>
+    </Astronav>
+    <div>
+      <!-- <div class="hidden lg:flex items-center gap-4">
+        <a href="#">Log in</a>
+        <Link href="#" block size="md">
+          <Whatsapp class="w-8 h-8 mr-2" />
+          <span>Whatsapp</span></Link>
+      </div> -->
+    </div>
+  </header>
+
+</Container>
+
+<script>
+  document.addEventListener("astro:page-load", () => {
+    const sections = document.querySelectorAll("section")
+    const navItems = document.querySelectorAll("nav ul li a")
+
+    const callback = (entries: any[]) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          navItems.forEach((item) => {
+            if (item.getAttribute("aria-label") == entry.target.id) {
+              item.classList.add("text-blue-500")
+            } else {
+              item.classList.remove("text-blue-500")
+            }
+          })
+        }
+      })
+    }
+
+    const observer = new IntersectionObserver(callback, {
+      root: null,
+      rootMargin: "0px",
+      threshold: 0.3,
+    })
+
+    sections.forEach((section) => {
+      observer.observe(section)
+    })
+
+    // Cleanup function
+    document.onvisibilitychange = () => {
+      if (document.visibilityState === "hidden") {
+        observer.disconnect()
+      } else {
+        sections.forEach((section) => {
+          observer.observe(section)
+        })
+      }
+    }
+  })
+</script>
